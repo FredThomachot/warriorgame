@@ -4,37 +4,77 @@ import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) {
-      
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Welcome to the Warriorz game");
-        System.out.println("Selectionnez un personnage : ");
+        Personnages personnages[] = new Personnages[10];
+        Scanner userChoice = new Scanner(System.in);
 
         System.out.println("*************************************************");
-
-        System.out.println("Veuillez saisir un nom de guerrier :");
-        String nomGuerrier = sc.nextLine();
-        System.out.println("Choisissez votre arme :");
-        String nomArme = sc.nextLine();
-        System.out.println("Le nom de votre guerrier est : " +nomGuerrier+ " et votre arme est : " +nomArme);
-
+        System.out.println("Welcome to Warriorz, the JAVA game");
         System.out.println("*************************************************");
 
-        System.out.println("Veuillez saisir un nom de magicien :");
-        String nomMagicien = sc.nextLine();
-        System.out.println("Choisissez votre philtre :");
-        String nomPhiltre = sc.nextLine();
-        System.out.println("Le nom de votre magicien est : " +nomMagicien+ " et votre philtre est : " +nomPhiltre);
+        System.out.println("Choisissez un personnage : guerrier - magicien ");
 
-        System.out.println("*************************************************");
+                String choix = userChoice.nextLine();
 
-        Personnages guerrierTest = new Guerrier();
-        Personnages magicienTest = new Magicien();
+                if (choix.equals ("guerrier")){
+                    System.out.println("Vous etes un guerrier !");
+                    System.out.println("Choisissez un nom :");
+                
+                    String nomGuerrier = userChoice.nextLine();
+                    Personnages guerrierTest = new Guerrier();
+                    guerrierTest.setName(nomGuerrier);
 
-        guerrierTest.setName(nomGuerrier);
-        magicienTest.setName(nomMagicien);
+                    System.out.println("Choisissez votre arme :");
+                    String nomArme = userChoice.nextLine();
+                    
+                    System.out.print("Niveau de vie : ");
+                    Integer number = userChoice.nextInt();
+                    
+                    
+                    System.out.print("Niveau de force : ");
+                    Integer numberForce = userChoice.nextInt();
 
-        System.out.println(guerrierTest.getName()+" vs "+magicienTest.getName());
-   
+                    System.out.println("*************************************************");
+                    System.out.println("Caracteristiques du guerrier => ");
+                    System.out.println("Nom : " +nomGuerrier); 
+                    System.out.println("Arme : "+nomArme);
+                    System.out.println("Niveau de vie : "+number);
+                    System.out.println("Niveau de force : "+numberForce);
+                    System.out.println("*************************************************");
+                  
+
+
+                } else {
+                    System.out.println("Vous etes un magicien !");
+                    System.out.println("Choisissez un nom :");
+            
+                    String nomMagicien = userChoice.nextLine();
+                    Personnages magicienTest = new Magicien();
+                    magicienTest.setName(nomMagicien);
+
+                    System.out.println("Choisissez votre philtre :");
+                    String nomPhiltre = userChoice.nextLine();
+
+                    System.out.print("Niveau de vie : ");
+                    Integer number = userChoice.nextInt();
+
+                    System.out.print("Niveau de force : ");
+                    Integer numberForce = userChoice.nextInt();
+
+                    System.out.println("*************************************************");
+                    System.out.println("Caracteristiques du magicien => ");
+                    System.out.println("Nom : " +nomMagicien); 
+                    System.out.println("Philtre : "+nomPhiltre);
+                    System.out.println("Niveau de vie : "+number);
+                    System.out.println("Niveau de force : "+numberForce);
+                    System.out.println("*************************************************");
+                }
+
+       
+          
+
     }
 }
+    
+
+        
