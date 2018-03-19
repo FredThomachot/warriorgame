@@ -5,20 +5,21 @@ import java.util.Scanner;
 public class Hello {
     public static void main(String[] args) {
 
-        Personnages personnages[] = new Personnages[10];
-        Scanner userChoice = new Scanner(System.in);
+        Personnages personnages[] = new Personnages[8];
 
-        System.out.println("*************************************************");
-        System.out.println("Welcome to Warriorz, the JAVA game");
-        System.out.println("*************************************************");
+        for (int i=0; i<personnages.length; i++)
+        {
+
+        Scanner userChoice = new Scanner(System.in);
+    
+       
 
         System.out.println("Choisissez un personnage : guerrier - magicien ");
 
                 String choix = userChoice.nextLine();
 
                 if (choix.equals ("guerrier")){
-                    System.out.println("Vous etes un guerrier !");
-                    System.out.println("Choisissez un nom :");
+                    System.out.println("Vous etes un guerrier ! \nChoisissez un nom !");
                 
                     String nomGuerrier = userChoice.nextLine();
                     Personnages guerrierTest = new Guerrier();
@@ -35,18 +36,12 @@ public class Hello {
                     Integer numberForce = userChoice.nextInt();
 
                     System.out.println("*************************************************");
-                    System.out.println("Caracteristiques du guerrier => ");
-                    System.out.println("Nom : " +nomGuerrier); 
-                    System.out.println("Arme : "+nomArme);
-                    System.out.println("Niveau de vie : "+number);
-                    System.out.println("Niveau de force : "+numberForce);
-                    System.out.println("*************************************************");
+                    System.out.println("Caracteristiques du guerrier\nNom : " +nomGuerrier+"\nArme : "+nomArme+"\nNiveau de vie : "+number+ "\nNiveau de force : "+numberForce+ "\n*************************************************");
                   
 
 
                 } else {
-                    System.out.println("Vous etes un magicien !");
-                    System.out.println("Choisissez un nom :");
+                    System.out.println("Vous etes un magicien ! \nChoisissez un nom !");
             
                     String nomMagicien = userChoice.nextLine();
                     Personnages magicienTest = new Magicien();
@@ -62,16 +57,11 @@ public class Hello {
                     Integer numberForce = userChoice.nextInt();
 
                     System.out.println("*************************************************");
-                    System.out.println("Caracteristiques du magicien => ");
-                    System.out.println("Nom : " +nomMagicien); 
-                    System.out.println("Philtre : "+nomPhiltre);
-                    System.out.println("Niveau de vie : "+number);
-                    System.out.println("Niveau de force : "+numberForce);
-                    System.out.println("*************************************************");
+                    System.out.println("Caracteristiques du magicien\nNom : " +nomMagicien+"\nPhiltre : "+nomPhiltre+"\nNiveau de vie : "+number+ "\nNiveau de force : "+numberForce+ "\n*************************************************");
                 }
 
        
-          
+            } 
 
     }
 }
