@@ -13,4 +13,5 @@ public class Guerrier extends Personnages {
     public String getWeapon(){
         return this.arme ;
     }
+    
  }
