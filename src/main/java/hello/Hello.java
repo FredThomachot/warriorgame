@@ -5,66 +5,79 @@ import java.util.Scanner;
 public class Hello {
     public static void main(String[] args) {
 
-        Personnages personnages[] = new Personnages[8];
+        Personnages personnagesTab[] = new Personnages[10];
+       
 
-        for (int i=0; i<personnages.length; i++)
-        {
-
+        for (int i=0; i<personnagesTab.length; i++) {
+       
         Scanner userChoice = new Scanner(System.in);
-    
-       
 
-        System.out.println("Choisissez un personnage : guerrier - magicien ");
+        System.out.println(" \nBienvenue dans le game, que voulez vous faire ?\n1-Creer un personnage\n2-Modifier un personnage\n3-Fight like a brave !");
+        String menu = userChoice.nextLine();
 
-                String choix = userChoice.nextLine();
+        if (menu.equals("1")){ 
 
-                if (choix.equals ("guerrier")){
-                    System.out.println("Vous etes un guerrier ! \nChoisissez un nom !");
+            System.out.println(" \nChoisissez un personnage : \n1-guerrier\n2-magicien");
+            String choix = userChoice.nextLine();
+
+            if (choix.equals("1")||choix.equals("guerrier")){
+
+                System.out.println(" \nVous etes un guerrier ! \nChoisissez un nom ! ");
+                String nomGuerrier = userChoice.nextLine();
+                Personnages guerrierTest = new Guerrier();
+                guerrierTest.setName(nomGuerrier);
+
+                System.out.println(" \nChoisissez votre arme :");
+                String nomArme = userChoice.nextLine();
+                           
+                System.out.print(" \nNiveau de vie : ");
+                Integer number = userChoice.nextInt();
+                guerrierTest.setLife(number);
+                        
+                System.out.print("Niveau de force : ");
+                Integer numberForce = userChoice.nextInt();
+                guerrierTest.setForce(numberForce);
+
+                System.out.println(" \n*************************************************\n ");
+                System.out.println(guerrierTest.toString()+"\nArme : "+nomArme);
+                System.out.println(" \n*************************************************");
+               
+            }
+            else if(choix.equals("2")||choix.equals("magicien")) {
+                       
+                System.out.println(" \nVous etes un magicien ! \nChoisissez un nom !");
+                String nomMagicien = userChoice.nextLine();
+                Personnages magicienTest = new Magicien();
+                magicienTest.setName(nomMagicien);
+
+                System.out.println(" \nChoisissez votre philtre :");
+                String nomPhiltre = userChoice.nextLine();
+
+                System.out.print(" \nNiveau de vie : ");
+                Integer number = userChoice.nextInt();
+                magicienTest.setLife(number);
+
+                System.out.print("Niveau de force : ");
+                Integer numberForce = userChoice.nextInt();
+                magicienTest.setForce(numberForce);
+
+                System.out.println(" \n*************************************************\n ");
+                System.out.println(magicienTest.toString()+"\naPhiltre : "+nomPhiltre);
+                System.out.println(" \n*************************************************");  
+               
+            }
+            }
                 
-                    String nomGuerrier = userChoice.nextLine();
-                    Personnages guerrierTest = new Guerrier();
-                    guerrierTest.setName(nomGuerrier);
-
-                    System.out.println("Choisissez votre arme :");
-                    String nomArme = userChoice.nextLine();
-                    
-                    System.out.print("Niveau de vie : ");
-                    Integer number = userChoice.nextInt();
-                    
-                    
-                    System.out.print("Niveau de force : ");
-                    Integer numberForce = userChoice.nextInt();
-
-                    System.out.println("*************************************************");
-                    System.out.println("Caracteristiques du guerrier\nNom : " +nomGuerrier+"\nArme : "+nomArme+"\nNiveau de vie : "+number+ "\nNiveau de force : "+numberForce+ "\n*************************************************");
-                  
-
-
-                } else {
-                    System.out.println("Vous etes un magicien ! \nChoisissez un nom !");
-            
-                    String nomMagicien = userChoice.nextLine();
-                    Personnages magicienTest = new Magicien();
-                    magicienTest.setName(nomMagicien);
-
-                    System.out.println("Choisissez votre philtre :");
-                    String nomPhiltre = userChoice.nextLine();
-
-                    System.out.print("Niveau de vie : ");
-                    Integer number = userChoice.nextInt();
-
-                    System.out.print("Niveau de force : ");
-                    Integer numberForce = userChoice.nextInt();
-
-                    System.out.println("*************************************************");
-                    System.out.println("Caracteristiques du magicien\nNom : " +nomMagicien+"\nPhiltre : "+nomPhiltre+"\nNiveau de vie : "+number+ "\nNiveau de force : "+numberForce+ "\n*************************************************");
-                }
-
-       
+        else if (menu.equals("2")) {   
+            System.out.println(" \n YOU CAN NOT DO THIS (YET)\n ");
             } 
+        else {
+            System.out.println(" \nµµµµµµµµ%%%%%%%%%%%FFFFFIIIIIIIIIGGGGGGGHHHHHHHHHHTTTTTTTTTTTTTT%%%%%%%%%%%µµµµµµµµ\n ");
+            }
+        }
+    } 
+} 
 
-    }
-}
     
 
         
