@@ -34,8 +34,8 @@ public abstract class Personnages {
         public String toString(){
             return
                 "Nom: "+this.nom+
-                " \nNiveau de vie: "+this.life+
-                " \nNiveau de force: "+this.force;
+                " \nNiveau de vie : "+this.life+
+                " \nNiveau de force : "+this.force;
         }
 
 }

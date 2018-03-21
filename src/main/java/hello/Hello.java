@@ -10,10 +10,14 @@ public class Hello {
 
         Scanner userChoice = new Scanner(System.in);
 
+        System.out.println(" \nBienvenue dans le game\n");
+         
         while (true) {
+
             System.out.println(
-                    " \nBienvenue dans le game, que voulez vous faire ?\n1-Creer un personnage\n2-Afficher les personnages");
+                    " \nQue voulez vous faire ?\n1-Creer un personnage\n2-Afficher les personnages\n3-Menu qui sert a rien");
             String menu = userChoice.nextLine();
+           
 
             if (menu.equals("1")) {
 
@@ -26,7 +30,7 @@ public class Hello {
                     String nomGuerrier = userChoice.nextLine();
                     Personnages guerrierTest = new Guerrier();
                     guerrierTest.setName(nomGuerrier);
-
+ 
                     System.out.print(" \nNiveau de vie : ");
                     Integer number = userChoice.nextInt();
                     guerrierTest.setLife(number);
@@ -35,7 +39,6 @@ public class Hello {
                     Integer numberForce = userChoice.nextInt();
                     guerrierTest.setForce(numberForce);
 
-                   
                     player.add(guerrierTest);
 
                 } else if (choix.equals("2") || choix.equals("magicien")) {
@@ -61,7 +64,6 @@ public class Hello {
             else  {
                 for (int i = 0; i < player.size(); i++) {
                     System.out.println(" \n*************************************************");
-                    System.out.println((player.get(i)).getClass().getName());
                     System.out.println((player.get(i)).toString());
                     System.out.println("*************************************************");
                 }
