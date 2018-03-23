@@ -3,24 +3,36 @@ import java.util.Random;
 
 public class Guerrier extends Personnages {
     
-    protected String arme[]  = {"Hachette","Ferraille", "Sabre", "Arbalette","Toupie infernale"};
-    protected Boolean bouclier = true;
+    
+    //protected Boolean bouclier = true;
 
-    Random rnd = new Random();
+    private Weapon monArme = new Weapon();
 
-    public String toString() {
-        return "Personnage : Guerrier \nArme : "+arme[rnd.nextInt(5)]+ "\n" +super.toString();
+
+    public Guerrier (String nom, int life, int force, Weapon arme){
+        this.setName(nom);
+        this.setLife(life);
+        this.setForce(force);
+        this.setMonArme(arme);
     }
- }
 
-    
-    
-    /*public void setWeapon(String arme) {
-        this.arme = arme ;
+    public Guerrier (){}
+
+    public void setMonArme(Weapon arme) 
+    {
+        this.monArme= arme;
     }
+
+    public String toString(){
+        return super.toString()+" \n";
+    }
+
+
+}
     
-    public String getWeapon(){
-        return this.arme ;
-    }*/
 
     
+
+    
+    
+ 

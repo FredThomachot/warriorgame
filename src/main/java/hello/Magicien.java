@@ -3,23 +3,28 @@ import java.util.Random;
 
 public class Magicien extends Personnages {
     
-    protected String sort[]  = {"Mort instantanee","Paralysie", "Glacage extreme", "Fondue vivante","Tourniboulie"};
-    protected Boolean philtre = true;
+   
+   // protected Boolean philtre = true;
 
-    Random rnd = new Random();
+    Sortilege monSort = new Sortilege();
 
-    public String toString() {
-        return "Personnage : Magicien \nSort : "+sort[rnd.nextInt(5)]+"\n" +super.toString();
+    public Magicien (String nom, int life, int force, Sortilege sort){
+        this.setName(nom);
+        this.setLife(life);
+        this.setForce(force);
+        this.setMonSort(sort);
     }
+
+    public Magicien (){}
+
+    public void setMonSort(Sortilege sort) 
+    {
+        this.monSort= sort;
+    }
+
+    public String toString(){
+        return super.toString()+" \n" ;
+    }
+
 
 }
-
-    /*public void setSort(String sort) {
-        this.sort = sort ;
-    }
-    
-    public String getSort(){
-        return this.sort ;
-    }*/
-
-    
