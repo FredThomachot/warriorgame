@@ -23,7 +23,7 @@ public class Magicien extends Personnages {
     }
 
     public String toString(){
-        return super.toString()+" \n" ;
+        return super.toString()+" \n" +monSort;
     }
 
 

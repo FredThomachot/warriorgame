@@ -46,8 +46,7 @@ public class Hello {
             else if (menu.equals("2"))
             {
                 afficherPerso();
-                afficherArme();
-                afficherSort();
+                
             }
             else if (menu.equals("3"))
             {
@@ -89,7 +88,13 @@ public class Hello {
 
         System.out.print(" \nFelicitations, vous venez de creer un guerrier !\n");
 
+        if (guerrierTest instanceof Guerrier)
+        {
+            ((Guerrier)guerrierTest).setMonArme(armePouvoir);
+        }
+        
         player.add(guerrierTest);
+
         userChoice.nextLine();
     }
 
@@ -117,6 +122,11 @@ public class Hello {
         sortList.add(sortPouvoir);
 
         System.out.print(" \nFelicitations, vous venez de creer un magicien !\n");
+
+        if (magicienTest instanceof Magicien)
+        {
+            ((Magicien)magicienTest).setMonSort(sortPouvoir);
+        }
 
         player.add(magicienTest);
         userChoice.nextLine();
